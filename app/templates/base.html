@@ -1,0 +1,35 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %}
+            DaRecipe |
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-success alert-dimissible">
+            <button type="button" data-dismiss="alert" class="close">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="container principal-home">
+        {% block content%}
+        {% endblock %}
+    </div>
+
+
+    {% block scripts %}
+        {{ super() }}
+    {% endblock %}
+{% endblock %}

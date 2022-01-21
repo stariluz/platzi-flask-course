@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Login
+{% endblock title %}
+
+
+{% block content %}
+    <h1 class="text-center">Ingresar a la cuenta</h1>
+    <!-- Las siguientes son dos maneras para crear nuestra forma(formulario), ambas son validas, pero es mejor implementar la segunda forma -->
+    <!-- <form action="{{ url_for('auth.login') }}" method="POST">
+        {{ login_form.username.label }}
+        {{ login_form.username }}
+        {{ login_form.password.label }}
+        {{ login_form.password }}
+        {{ login_form.submit.label }}
+        {{ login_form.submit }}
+    </form> -->
+    <div class="container">
+        {{ wtf.quick_form(login_form) }}
+    </div>
+{% endblock content %}
+    

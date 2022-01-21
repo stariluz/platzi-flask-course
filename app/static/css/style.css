@@ -1,0 +1,23 @@
+/* ------- NAVBAR -------- */
+.navbar img{
+    height: 30px;
+}
+.daRecipe-navbar{
+    background-color: #d1d166;
+}
+.navbar a{
+    color: #ffffff !important;
+}
+.principal-home{
+    margin-top: 20px;
+}
+.in-production-object{
+    background-color: #4c5d70;
+    color: white;
+}
+.daRecipe-title{
+    font-weight: 600;
+}
+.daRecipe-toogle .open{
+    background-color: black;
+}

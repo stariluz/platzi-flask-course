@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block title %}
+    {{ super() }}
+    Home
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron in-production-object">
+        <h2>ENTORNO DE PRODUCCION</h2>
+        <p>
+            {{ message }} <br>
+            Tu direccion ip es {{ user_ip }}     
+        </p>
+    
+        {% if username %}
+            <h2>Bienvenido {{ username }}!!!</h2>
+        {% else %}
+        <h2>Bienvenido!!!</h2>
+        {% endif %}
+    
+        <ul>
+            {% for btn in todos_btns %}
+                {{ macro.render_todo_btn(btn) }}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
+    

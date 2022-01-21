@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Bienvenido
+{% endblock %}
+
+
+{% block content %}
+    {% if usuario %}
+        <h1>Bienvenido {{ usuario | capitalize }}</h1>
+    {% endif %}
+    {% if ip_user %}
+        <h3> Hola Mundo en Flask 😎😮😀 Bienvenido, tu direccion IP es: {{ip_user}}</h3>
+    {% else %}
+        <a href="{{ url_for('index') }}">Ir a inicio</a>
+    {% endif %}
+
+    <div class="container">
+        <!-- <form action="{{ url_for('hola') }}">
+            {{ login_form.usuario }}
+            {{ login_form.usuario.label }}
+            {{ login_form.contrasena }}
+            {{ login_form.contrasena.label }}
+        </form> -->
+        {{ wtf.quick_form(login_form) }}
+    </div>
+
+    <ul>
+        {% for tarea in tareas %}
+            {{ macros.render_tarea(tarea) }}
+        {% endfor %}
+    </ul>
+{% endblock%}
+    
